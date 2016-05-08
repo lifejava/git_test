@@ -19,8 +19,7 @@ public class Calculator{
     this.result = first * second;
   }
   
-  public void getResult(){
-    System.out.println(result);
+  public double getResult(){
+    return result;
   }
-  
 }
