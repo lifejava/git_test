@@ -13,23 +13,31 @@ public class Triangle {
   
   public double area(double a, double b, double c) {
   //calculate the triangle area
-  //s = (a + b + c) / 2
-    double s = (a + b + c) / 2;
-    
-    //√{s (s - a)(s - b)(s - c)}
-    double i = Math.sqrt( s*( (s-a)*(s-b)*(s-c) ) );
-    
+    double s = (a + b + c) / 2;   			//s = (a + b + c) / 2
+    double i = Math.sqrt( s*( (s-a)*(s-b)*(s-c) ) ); 	//√{s (s - a)(s - b)(s - c)}
     return i;
   }
   
+  public boolean isExists() {
+    if ( (this.a != null) && (this.b != null) && (this.c != null) ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   public static void main(String[] args) {
     Triangle triangle = new Triangle(new Point(2.0, 2.0), new Point(3.0, 6.0), new Point(7.0, 2.0));
     
-    double ab = triangle.a.distanceTo(triangle.b);
-    double bc = triangle.b.distanceTo(triangle.c);
-    double ca = triangle.c.distanceTo(triangle.a);
-    
-    //triangle.area(ab, bc, cb);
-    System.out.println(triangle.area(ab, bc, ca));    
+    if(triangle.isExists()) {
+      double ab = triangle.a.distanceTo(triangle.b);
+      double bc = triangle.b.distanceTo(triangle.c);
+      double ca = triangle.c.distanceTo(triangle.a);
+      
+      double figure = triangle.area(ab, bc, ca);    
+      System.out.println(figure);
+    } else {
+      System.out.println("Треугольник не создан");
+    }        
   }
 }

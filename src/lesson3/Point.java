@@ -9,7 +9,7 @@ public class Point {
     this.x = x;
     this.y = y;
   }
-  
+
   public double distanceTo(Point point) {
   //calculate distance between two points
    
