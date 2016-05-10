@@ -18,8 +18,12 @@ public class Triangle {
     return i;
   }
   
-  public boolean isExists() {
-    if ( (this.a != null) && (this.b != null) && (this.c != null) ) {
+  public boolean isExists(double ab, double bc, double ca) {
+    MaxLength maxLength = new MaxLength();
+    
+    double max = maxLength.max(ab, bc, ca);
+    
+    if ((max < (ab + bc)) && (max < (ab + ca)) && (max < (bc + ca))) {
       return true;
     } else {
       return false;
@@ -29,15 +33,25 @@ public class Triangle {
   public static void main(String[] args) {
     Triangle triangle = new Triangle(new Point(2.0, 2.0), new Point(3.0, 6.0), new Point(7.0, 2.0));
     
-    if(triangle.isExists()) {
-      double ab = triangle.a.distanceTo(triangle.b);
-      double bc = triangle.b.distanceTo(triangle.c);
-      double ca = triangle.c.distanceTo(triangle.a);
-      
+    double ab = triangle.a.distanceTo(triangle.b);
+    double bc = triangle.b.distanceTo(triangle.c);
+    double ca = triangle.c.distanceTo(triangle.a);
+    
+    if(triangle.isExists(ab, bc, ca)) {
       double figure = triangle.area(ab, bc, ca);    
       System.out.println(figure);
     } else {
       System.out.println("Треугольник не создан");
     }        
+			  
+    //-------------------------------------------------------------------------------------------
+    //     *******Тест*******
+    //MaxLength maxLength = new MaxLength();
+    //double t = maxLength.max(ab, bc, ca);   
+    //System.out.println("Треугольник ab = " + ab);
+    //System.out.println("Треугольник bc = " + bc);
+    //System.out.println("Треугольник ca = " + ca);   
+    //System.out.println("Саммая длиная сторона: " + t);
+    
   }
 }
