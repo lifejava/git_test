@@ -23,7 +23,7 @@ public class Triangle {
     
     double max = maxLength.max(ab, bc, ca);
     
-    return max < (ab + bc) && max < (ab + ca) && max < (bc + ca) ? true : false;
+    return max < (ab + bc) && max < (ab + ca) && max < (bc + ca);
    
   }
 
