@@ -25,8 +25,5 @@ public class CubeFunction {
     for (float i = 0.0f; i <= count; i++) {
        System.out.println(i);
     }
-    System.out.println(count);
-    
-    
   }
 }
