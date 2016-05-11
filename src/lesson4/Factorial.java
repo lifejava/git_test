@@ -17,7 +17,7 @@ public class Factorial {
     
     Factorial factorial = new Factorial();
     
-    int count = factorial.fac(6);
+    int count = factorial.fac(n);
     System.out.println(count);
     
   }
