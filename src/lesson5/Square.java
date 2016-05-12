@@ -15,14 +15,21 @@ public class Square {
   public void expand () {
     int ver;
     int hor;
+    int numElements = arr.length;
     
     for (int a = 0; a < arr.length; a++) {
+    
       for (int z = arr.length - 1; z >= 0; z--) {
 	ver = arr[z][a];  //строка 2-- ячейка 0
 	hor = arr[a][z]; //строка 0 ячейка 2--
 	
-	arr[a][z] = ver;
-	arr[z][a] = hor;
+	if ( numElements >= 0 ) {
+	  arr[a][z] = ver;
+	  arr[z][a] = hor;
+	  
+	} 
+	
+	numElements--;
       }
     }
      
