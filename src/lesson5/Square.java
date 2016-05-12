@@ -1,16 +1,22 @@
 package lesson5;
 
 public class Square {
-  public int marix = 6;
-  public int[][] arr = new int[marix][marix];
+  private int marix = 6;
+  private int[][] arr = new int[marix][marix];
   
   public void fillArray () {
-    int num = 0;
-    for ( int i = 0; i < arr.length; i++) {
-      for ( int j = 0; j < arr.length; j++) {
-	arr[i][j] = matrix * i + 0;
-      }
-    }
+     for (int k=0; k<m/2; k++) // border -> center
+        {
+            for (int j=k; j<m-1-k; j++) // left -> right
+            {
+                // меняем местами 4 угла
+                int tmp         arr A[k][j];
+                arr[k][j]         arr A[j][m-1-k];
+                arr[j][m-1-k]     arr A[m-1-k][m-1-j];
+                arr[m-1-k][m-1-j] arr A[m-1-j][k];
+                arr[m-1-j][k]     arr tmp;
+            }
+        }
   }
   
   public void expand () {
