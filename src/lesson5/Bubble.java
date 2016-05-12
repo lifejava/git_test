@@ -3,7 +3,7 @@ package lesson5;
 public class Bubble {
   int values[] = new int[] {7, 5, 2, 0, 4, 3, 1, 9, 6, 8};
   
-  public void mySorts (int[] v) {
+  public void sortBubble (int[] v) {
     for (int i = v.length - 1; i > 0; i--) {
       for (int j = 0; j < i; j++) {
         if (v[j] > v[j + 1]) {
@@ -23,7 +23,7 @@ public class Bubble {
     //  System.out.println(i);
     //}
 
-    bb.mySorts(bb.values);
+    bb.sortBubble(bb.values);
     //System.out.println("Сортируем");
 
     for (int i : bb.values) {
