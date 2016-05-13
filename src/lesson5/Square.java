@@ -6,7 +6,7 @@ public class Square {
   public int[][] arr;
   
   public void fillArray () {
-    arr = new int[m][m];
+    
     
     for ( int i = 0; i < arr.length; i++) {
       for ( int j = 0; j < arr.length; j++) {
@@ -36,6 +36,7 @@ public class Square {
    }    
   public Square(int m) {
     this.m = m;
+    arr = new int[m][m];
   }
   public static void main(String[] args) {
     Square square = new Square(Integer.parseInt(args[0]));
