@@ -2,19 +2,6 @@ package lesson5;
 
 public class Square {
   
-  public int m = 0;
-  public int[][] arr;
-  
-  public void fillArray () {
-    
-    
-    for ( int i = 0; i < arr.length; i++) {
-      for ( int j = 0; j < arr.length; j++) {
-	arr[i][j] = j;
-      }
-    }
-  }
-  
   public void output(int[][] arr) {
     for ( int i = 0; i < arr.length; i++) {
       for ( int j = 0; j < arr.length; j++) {
@@ -24,29 +11,35 @@ public class Square {
     }
   }	
   
-  public void expand () {
-    int[][] pilot = new int[m][m];
+  public int[][] expand (int[][] a) {
+    int[][] pilot = new int[a.length][a.length];
     
-    for (int i = 0; i < arr.length; i++) {
-      for (int j = 0, p = arr.length - 1; j < arr.length; j++, p--) {
-	pilot[i][p] = arr[j][i];
+    for (int i = 0; i < a.length; i++) {
+      for (int j = 0, p = a.length - 1; j < a.length; j++, p--) {
+	pilot[i][p] = a[j][i];
       }
     }
-    arr = pilot;
+    a = pilot;
+    return a;
    }    
-  public Square(int m) {
-    this.m = m;
-    arr = new int[m][m];
-  }
+  
   public static void main(String[] args) {
-    Square square = new Square(Integer.parseInt(args[0]));
+    int m = 9;
+    int[][] arr = new int[m][m];
     
-    square.fillArray(); 
+    for ( int i = 0; i < arr.length; i++) {
+      for ( int j = 0; j < arr.length; j++) {
+	arr[i][j] = j;
+      }
+    }
+    
+    Square square = new Square();
+    
    // System.out.println("---------------Не развернут---------------");
-    square.output(square.arr); //вывод
+    square.output(arr); 
     
    // System.out.println("---------------Разворачиваем---------------");
-    square.expand();  
-    square.output(square.arr);
+    arr = square.expand(arr);  
+    square.output(arr);
   }
 }
