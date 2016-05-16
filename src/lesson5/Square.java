@@ -11,27 +11,30 @@ public class Square {
     }
   }	
   
-  public int[][] expand (int[][] a) {
+  public int[][] turn(int[][] a) {
     int[][] pilot = new int[a.length][a.length];
     
     for (int i = 0; i < a.length; i++) {
       for (int j = 0, p = a.length - 1; j < a.length; j++, p--) {
 	pilot[i][p] = a[j][i];
       }
-    }
+    }  
     a = pilot;
     return a;
-   }    
+  }    
   
   public static void main(String[] args) {
-    int m = 9;
-    int[][] arr = new int[m][m];
     
-    for ( int i = 0; i < arr.length; i++) {
-      for ( int j = 0; j < arr.length; j++) {
-	arr[i][j] = j;
-      }
-    }
+    int[][] arr = {{1, 2, 3, 4, 5, 6, 7, 8, 9},
+		   {1, 2, 3, 4, 5, 6, 7, 8, 9},
+		   {1, 2, 3, 4, 5, 6, 7, 8, 9},
+		   {1, 2, 3, 4, 5, 6, 7, 8, 9},
+		   {1, 2, 3, 4, 5, 6, 7, 8, 9},
+		   {1, 2, 3, 4, 5, 6, 7, 8, 9},
+		   {1, 2, 3, 4, 5, 6, 7, 8, 9},
+		   {1, 2, 3, 4, 5, 6, 7, 8, 9},
+		   {1, 2, 3, 4, 5, 6, 7, 8, 9},
+		  };
     
     Square square = new Square();
     
@@ -39,7 +42,7 @@ public class Square {
     square.output(arr); 
     
    // System.out.println("---------------Разворачиваем---------------");
-    arr = square.expand(arr);  
+    arr = square.turn(arr);  
     square.output(arr);
   }
 }
