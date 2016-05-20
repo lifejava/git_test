@@ -11,12 +11,14 @@ public class LineSearch {
 
     for (int i = 0; i < arrString.length; i++) {
       if (arrString[i] == arrSearch[0]) {
-        for (int a=i, b=0; b < arrSearch.length; a++, b++) {
+        for (int a=i, b=0; b < arrSearch.length && a < arrString.length; a++, b++) {
+        
           if(arrString[a] == arrSearch[b]) {
-            result = true;
+            if (b  == (arrSearch.length - 1)) return true;
           } else {
-            result = false;
+            if (result != false) result = false;
           }
+          
         }
       }
     }
@@ -24,8 +26,8 @@ public class LineSearch {
   }
 
   public static void main(String[] args) {
-    String str1 = "Продолжение";
-    String str2 = "дол";
+    String str1 = "автомотовелофото";
+    String str2 = "тов";
 
     LineSearch lineSearch = new LineSearch();
     boolean b = lineSearch.find(str1, str2);
